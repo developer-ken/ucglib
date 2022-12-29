@@ -40,6 +40,12 @@
 
 #include "Ucglib.h"
 
+#ifdef PLATFORMIO
+#ifdef ARDUINO_ARCH_STM32
+#define __NOP                             __ASM volatile ("nop")
+#endif
+#endif
+
 /*=========================================================================*/
 /* 8 Bit SW SPI */
 
